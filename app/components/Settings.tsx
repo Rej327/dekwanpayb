@@ -13,6 +13,7 @@ import {
 } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useState } from 'react'
+import { isValidEmail } from '../utils/validators'
 
 export function Settings() {
   const [loading, setLoading] = useState(false)
@@ -25,8 +26,7 @@ export function Settings() {
     },
 
     validate: {
-      email: (value: string) =>
-        /^\S+@\S+$/.test(value) ? null : 'Invalid email',
+      email: (value: string) => (isValidEmail(value) ? null : 'Invalid email'),
     },
   })
 
