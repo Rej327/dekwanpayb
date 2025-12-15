@@ -40,7 +40,13 @@ export function Dashboard({
         <Paper withBorder p="xl" radius="md" shadow="sm">
           <Group justify="space-between">
             <div>
-              <Text c="dimmed" tt="uppercase" fw={700} size="xs" ls={1}>
+              <Text
+                c="dimmed"
+                tt="uppercase"
+                fw={700}
+                size="xs"
+                style={{ letterSpacing: 1 }}
+              >
                 Total Tasks
               </Text>
               <Text fw={700} size="3rem" lh={1} mt="sm">
