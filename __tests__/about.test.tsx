@@ -7,5 +7,6 @@ describe('About page', () => {
     expect(getByText('About Page')).toBeInTheDocument()
     expect(getByText('Another text')).toBeInTheDocument()
     expect(getByText('Another text 1')).toBeInTheDocument()
+    expect(getByText('Another text 3')).toBeInTheDocument()
   })
 })
