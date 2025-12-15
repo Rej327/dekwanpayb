@@ -1,4 +1,9 @@
 export default function AboutPage() {
   const message = 'About Page'
-  return <div>{message}</div>
+  return (
+    <div>
+      <p>{message}</p>
+      <p>Another text</p>
+    </div>
+  )
 }
