@@ -1,5 +1,5 @@
 {
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "eslint-comments"],
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
@@ -8,6 +8,10 @@
   "rules": {
     // I suggest you add those two rules:
     "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error"
+    "@typescript-eslint/no-explicit-any": "error",
+    "eslint-comments/no-restricted-disable": [
+      "error",
+      "@typescript-eslint/no-explicit-any"
+    ]
   }
 }
