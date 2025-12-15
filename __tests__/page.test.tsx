@@ -1,12 +1,17 @@
 import Home from '@/app/page'
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
+import { MantineProvider } from '@mantine/core'
 
 describe('Page', () => {
-  it('renders a heading', () => {
-    render(<Home />)
+  it('renders the dashboard by default', () => {
+    render(
+      <MantineProvider>
+        <Home />
+      </MantineProvider>
+    )
 
-    const heading = screen.getByRole('heading', { level: 1 })
-    expect(heading).toBeInTheDocument()
+    expect(screen.getByText('Dashboard Overview')).toBeInTheDocument()
+    expect(screen.getByText('DekwanPayb')).toBeInTheDocument()
   })
 })
