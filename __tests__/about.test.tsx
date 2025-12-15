@@ -6,5 +6,6 @@ describe('About page', () => {
     const { getByText } = render(<AboutPage />)
     expect(getByText('About Page')).toBeInTheDocument()
     expect(getByText('Another text')).toBeInTheDocument()
+    expect(getByText('Another text 1')).toBeInTheDocument()
   })
 })

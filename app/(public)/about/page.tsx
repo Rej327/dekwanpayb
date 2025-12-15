@@ -4,6 +4,7 @@ export default function AboutPage() {
     <div>
       <p>{message}</p>
       <p>Another text</p>
+      <p>Another text 1</p>
     </div>
   )
 }
