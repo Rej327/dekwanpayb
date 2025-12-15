@@ -8,7 +8,8 @@ interface PaymentButtonProps {
 
 const PaymentButton: React.FC<PaymentButtonProps> = ({ amount, onPayment }) => {
   // Intentional unused variable to trigger ESLint error
-  const unusedVariable = 'This will cause an error'
+
+  // Another any usage to cause error
 
   return <Button onClick={onPayment}>Pay ${amount}</Button>
 }
