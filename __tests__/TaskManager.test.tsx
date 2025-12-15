@@ -10,16 +10,18 @@ const renderWithMantine = (component: React.ReactNode) => {
 describe('TaskManager', () => {
   it('renders correctly', () => {
     renderWithMantine(<TaskManager />)
-    expect(screen.getByText('Task Manager')).toBeInTheDocument()
-    expect(screen.getByPlaceholderText('Add a new task')).toBeInTheDocument()
-    expect(screen.getByText('No tasks yet')).toBeInTheDocument()
+    expect(screen.getByText('My Tasks')).toBeInTheDocument()
+    expect(
+      screen.getByPlaceholderText('What needs to be done?')
+    ).toBeInTheDocument()
+    expect(screen.getByText('✨ No tasks yet')).toBeInTheDocument()
   })
 
   it('allows adding a task', () => {
     renderWithMantine(<TaskManager />)
 
-    const input = screen.getByPlaceholderText('Add a new task')
-    const addButton = screen.getByText('Add')
+    const input = screen.getByPlaceholderText('What needs to be done?')
+    const addButton = screen.getByText('Add Task')
 
     fireEvent.change(input, { target: { value: 'New Test Task' } })
     fireEvent.click(addButton)
@@ -31,8 +33,8 @@ describe('TaskManager', () => {
   it('allows toggling a task', () => {
     renderWithMantine(<TaskManager />)
 
-    const input = screen.getByPlaceholderText('Add a new task')
-    const addButton = screen.getByText('Add')
+    const input = screen.getByPlaceholderText('What needs to be done?')
+    const addButton = screen.getByText('Add Task')
 
     fireEvent.change(input, { target: { value: 'Toggle Task' } })
     fireEvent.click(addButton)
@@ -46,8 +48,8 @@ describe('TaskManager', () => {
   it('allows deleting a task', () => {
     renderWithMantine(<TaskManager />)
 
-    const input = screen.getByPlaceholderText('Add a new task')
-    const addButton = screen.getByText('Add')
+    const input = screen.getByPlaceholderText('What needs to be done?')
+    const addButton = screen.getByText('Add Task')
 
     fireEvent.change(input, { target: { value: 'Delete Task' } })
     fireEvent.click(addButton)

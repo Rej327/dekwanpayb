@@ -8,6 +8,8 @@ import {
   ThemeIcon,
   RingProgress,
   Center,
+  Stack,
+  Title,
 } from '@mantine/core'
 
 interface DashboardProps {
@@ -27,59 +29,81 @@ export function Dashboard({
 
   return (
     <div>
-      <Text size="xl" fw={700} mb="lg">
-        Dashboard Overview
-      </Text>
+      <Stack mb="xl">
+        <Title order={2}>Dashboard Overview</Title>
+        <Text c="dimmed" size="sm">
+          Summary of your activity and progress.
+        </Text>
+      </Stack>
 
-      <SimpleGrid cols={{ base: 1, sm: 3 }}>
-        <Paper withBorder p="md" radius="md">
+      <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="lg">
+        <Paper withBorder p="xl" radius="md" shadow="sm">
           <Group justify="space-between">
             <div>
-              <Text c="dimmed" tt="uppercase" fw={700} size="xs">
+              <Text c="dimmed" tt="uppercase" fw={700} size="xs" ls={1}>
                 Total Tasks
               </Text>
-              <Text fw={700} size="xl">
+              <Text fw={700} size="3rem" lh={1} mt="sm">
                 {stats.totalTasks}
               </Text>
+              <Text c="dimmed" size="sm" mt="xs">
+                All time tasks
+              </Text>
             </div>
-            <ThemeIcon color="blue" variant="light" size={38} radius="md">
-              📝
+            <ThemeIcon color="blue" variant="light" size={60} radius="md">
+              <Text size="xl">📝</Text>
             </ThemeIcon>
           </Group>
         </Paper>
 
-        <Paper withBorder p="md" radius="md">
+        <Paper withBorder p="xl" radius="md" shadow="sm">
           <Group justify="space-between">
             <div>
-              <Text c="dimmed" tt="uppercase" fw={700} size="xs">
+              <Text
+                c="dimmed"
+                tt="uppercase"
+                fw={700}
+                size="xs"
+                style={{ letterSpacing: 1 }}
+              >
                 Completed
               </Text>
-              <Text fw={700} size="xl">
+              <Text fw={700} size="3rem" lh={1} mt="sm">
                 {stats.completedTasks}
               </Text>
+              <Text c="dimmed" size="sm" mt="xs">
+                Tasks finished
+              </Text>
             </div>
-            <ThemeIcon color="green" variant="light" size={38} radius="md">
-              ✅
+            <ThemeIcon color="green" variant="light" size={60} radius="md">
+              <Text size="xl">✅</Text>
             </ThemeIcon>
           </Group>
         </Paper>
 
-        <Paper withBorder p="md" radius="md">
-          <Center>
-            <RingProgress
-              size={80}
-              roundCaps
-              thickness={8}
-              sections={[{ value: completionRate, color: 'blue' }]}
-              label={
-                <Text c="blue" fw={700} ta="center" size="xs">
-                  {completionRate}%
+        <Paper withBorder p="md" radius="md" shadow="sm">
+          <Center h="100%">
+            <Group>
+              <RingProgress
+                size={100}
+                roundCaps
+                thickness={10}
+                sections={[{ value: completionRate, color: 'blue' }]}
+                label={
+                  <Text c="blue" fw={700} ta="center" size="sm">
+                    {completionRate}%
+                  </Text>
+                }
+              />
+              <div>
+                <Text fw={700} size="lg">
+                  Completion Rate
                 </Text>
-              }
-            />
-            <Text ml="sm" size="sm" fw={500}>
-              Completion Rate
-            </Text>
+                <Text c="dimmed" size="sm">
+                  Overall progress
+                </Text>
+              </div>
+            </Group>
           </Center>
         </Paper>
       </SimpleGrid>

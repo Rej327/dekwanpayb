@@ -14,14 +14,14 @@ describe('Settings', () => {
     expect(screen.getByLabelText(/Email/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/Username/i)).toBeInTheDocument()
     expect(screen.getByPlaceholderText('Pick one')).toBeInTheDocument()
-    expect(screen.getByText('Save Settings')).toBeInTheDocument()
+    expect(screen.getByText('Save Changes')).toBeInTheDocument()
   })
 
   it('validates email input', async () => {
     renderWithMantine(<Settings />)
 
     const emailInput = screen.getByLabelText(/Email/i)
-    const saveButton = screen.getByText('Save Settings')
+    const saveButton = screen.getByText('Save Changes')
 
     fireEvent.change(emailInput, { target: { value: 'invalid-email' } })
     fireEvent.click(saveButton)
@@ -36,7 +36,7 @@ describe('Settings', () => {
     renderWithMantine(<Settings />)
 
     const emailInput = screen.getByLabelText(/Email/i)
-    const saveButton = screen.getByText('Save Settings')
+    const saveButton = screen.getByText('Save Changes')
 
     fireEvent.change(emailInput, { target: { value: 'test@example.com' } })
     fireEvent.click(saveButton)

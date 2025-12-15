@@ -5,6 +5,7 @@ import { MainShell } from './components/MainShell'
 import { Dashboard } from './components/Dashboard'
 import { TaskManager } from './components/TaskManager'
 import { Settings } from './components/Settings'
+import { PostManager } from './components/PostManager'
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('Dashboard')
@@ -15,6 +16,8 @@ export default function Home() {
         return <Dashboard />
       case 'Tasks':
         return <TaskManager />
+      case 'Posts':
+        return <PostManager />
       case 'Settings':
         return <Settings />
       default:

@@ -29,6 +29,7 @@ export function MainShell({
   const data = [
     { label: 'Dashboard', description: 'Overview & Stats' },
     { label: 'Tasks', description: 'Manage your todos' },
+    { label: 'Posts', description: 'Community Updates' },
     { label: 'Settings', description: 'App preferences' },
   ]
 
